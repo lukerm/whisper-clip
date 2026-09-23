@@ -21,7 +21,7 @@ from pathlib import Path
 
 import numpy as np
 
-from . import audio, clipboard
+from . import audio, clipboard, feedback
 from .transcribe import Transcriber
 from .vad import Segmenter
 
@@ -34,6 +34,7 @@ def _worker(jobs: queue.Queue[np.ndarray], transcriber: Transcriber) -> None:
         if text:
             clipboard.copy(text)
             print(f"> {text}")
+            feedback.blip("done")
 
 
 def run() -> None:
@@ -58,6 +59,8 @@ def run() -> None:
                 if recording:
                     segmenter.reset()
                     segments = []
+                    print("playing start blip")
+                    feedback.blip("start")
                     print("● Recording")
                 else:
                     if (tail := segmenter.flush()) is not None:
