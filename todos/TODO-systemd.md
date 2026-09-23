@@ -3,15 +3,11 @@
 Goal: daemon starts at login, model already warm; audible feedback since the
 terminal output is no longer visible.
 
-## Audio blip
+## Audio blip (done)
 
-- Add `feedback.py` with `blip(kind)`; play two short distinct tones
-  (start: rising, stop: falling). Generate them in numpy and play via
-  `sounddevice.play()` — no extra deps, no sound files.
-- Call from `__main__.run()` at the two toggle points, before the
-  `● Recording` / `■ Stopped` prints.
-- Keep it under 150 ms so it never lands in the recording (VAD would drop a
-  tone anyway, but no need to test that).
+- `feedback.py` has `blip(kind)`: rising tone on `● Recording`, falling tone
+  once the text has been copied to the clipboard (not on stop, so you hear
+  when it's ready to paste). 120 ms, numpy-generated, via `sounddevice.play()`.
 
 ## Service
 
