@@ -51,5 +51,7 @@ whisper_clip/
   vad.py         Segmenter: chunks -> speech segments, silence removed
   transcribe.py  audio -> text (faster-whisper)
   clipboard.py   text -> clipboard
+  feedback.py    start / done beeps
   __main__.py    daemon loop, hotkey signal, toggle command
 ```
+
