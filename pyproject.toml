@@ -1,0 +1,24 @@
+[project]
+name = "whisper-clip"
+version = "0.1.0"
+description = "Hands-free local dictation: mic -> Silero VAD -> faster-whisper (CUDA) -> clipboard"
+requires-python = ">=3.10"
+dependencies = [
+    "faster-whisper==1.2.1",
+    "nvidia-cublas-cu12==12.9.2.10",
+    "nvidia-cudnn-cu12==9.26.0.51",
+    "silero-vad==6.2.1",
+    "sounddevice==0.5.6",
+    "numpy==2.5.3",
+    "pyperclip==1.11.0",
+]
+
+[tool.setuptools]
+packages = ["whisper_clip"]
+
+[project.scripts]
+whisper-clip = "whisper_clip.__main__:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
