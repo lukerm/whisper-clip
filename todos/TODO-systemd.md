@@ -20,7 +20,7 @@ terminal output is no longer visible.
    PartOf=graphical-session.target
 
    [Service]
-   ExecStart=/full/path/to/.venv/bin/whisper-clip
+   ExecStart=/<full/path/to>/.venv/bin/whisper-clip
    Restart=on-failure
    RestartSec=3
 
