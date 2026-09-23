@@ -77,7 +77,7 @@ file). Alternatively, bind the key to
 
 ### Gotchas
 
-- The placeholder <full/path/to> needs replacing in the ExecStart field in the 
+- The placeholder `<full/path/to>` needs replacing in the ExecStart field in the
   service file, otherwise it'll fail to run.
 - The clipboard needs `WAYLAND_DISPLAY` in the service environment. GNOME on
 Ubuntu exports it to user services; if `pyperclip` fails in the journal,
