@@ -7,6 +7,8 @@ and replaces the clipboard. One recording, one clipboard entry.
 Pipeline: hotkey → `sounddevice` mic → Silero VAD (drop silence) →
 `faster-whisper` on CUDA → `pyperclip`.
 
+Read more about it in my [blog article](https://zl-labs.tech/post/2026-09-30-transcription-with-ai/).
+
 ## Install (Ubuntu)
 
 ```bash
