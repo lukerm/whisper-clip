@@ -2,6 +2,10 @@
 name = "whisper-clip"
 version = "0.1.0"
 description = "Hands-free local dictation: mic -> Silero VAD -> faster-whisper (CUDA) -> clipboard"
+authors = [
+  { name = "Luke Miller", email = "lukerm@zl-labs.tech" },
+]
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 dependencies = [
     "faster-whisper==1.2.1",
@@ -12,6 +16,11 @@ dependencies = [
     "numpy==2.5.3",
     "pyperclip==1.11.0",
 ]
+
+[project.urls]
+Source = "https://github.com/lukerm/whisper-clip"
+Blog = "https://zl-labs.tech/post/2026-09-30-dictation-with-ai/"
+
 
 [tool.setuptools]
 packages = ["whisper_clip"]
